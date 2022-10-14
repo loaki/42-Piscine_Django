@@ -9,7 +9,7 @@ def td_sample(element, number, small, molar):
                 <li>No {number}</li>
                 <li>{small}</li>
                 <li>{molar}</li>
-            <ul>
+            </ul>
         </td>'''
     else:
         td_sample = f'''
@@ -40,8 +40,8 @@ def periodic_table():
 <table>
     <tr>'''
     html_last = '''
-    <tr>
-<table>
+    </tr>
+</table>
 </body>
 </html>'''
     td = ''
@@ -53,11 +53,11 @@ def periodic_table():
     td = ''
     last_pos = 0
     for elem in list_table:
+        if last_pos == 17:
+            td+='</tr><tr>'
         for _ in range(last_pos, int(elem[1])-1):
             td+=td_sample('','','','')
         td+=td_sample(elem[0], elem[2], elem[3], elem[4])
-        if elem[1] == '17':
-            td+='</tr><tr>'
         last_pos = int(elem[1])
     html = open('periodic_table.html', 'w')
     html.write(html_first+td+html_last)
