@@ -1,22 +1,28 @@
-from parse import search
-import os.path
+import os
 import sys 
 
-def render(template):
-    print('ok')
+def render(template, settings):
+    for s in settings:
+        key = s.split('=')[0].strip()
+        value = s.split('=')[1].strip()
+        if value[0] == value[-1] and (value[0] == "'" or value[0] == '"'):
+            value = value[1:-1]
+        for l in template:
+            l.format(name=key)
+    print(template)
 
 if __name__ == '__main__':
     if len(sys.argv) == 2:
         if sys.argv[1].endswith('.template') and os.path.isfile('settings.py') and os.path.isfile(sys.argv[1]):
-            setting = open('settings.py', 'r')
+            settings = open('settings.py', 'r')
             template = open(sys.argv[1], 'r')
-            if not setting or not template:
-                if not setting:
+            if not settings or not template:
+                if not settings:
                     print('cant open settings.py file')
                 if not template:
                     print('cant open template file')
             else:
-                render(sys.argv[1])
+                render(template, settings)
         else:
             print('need a settings.py file at root and a .template file as argument')
     else:

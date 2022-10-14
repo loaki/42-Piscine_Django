@@ -1,1 +1,2 @@
 name = "duoquadragintian"
+nick = "jules"
