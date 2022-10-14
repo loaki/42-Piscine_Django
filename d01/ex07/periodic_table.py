@@ -1,5 +1,3 @@
-from parse import search
-
 def td_sample(element, number, small, molar):
     if element:
         td_sample = f'''
@@ -21,10 +19,10 @@ def parse_table(table):
     list_table = []
     for l in table:
         name = l.split()[0]
-        pos = search('position:{},', l)[0]
-        num = search('number:{},', l)[0]
-        small = search('small: {},', l)[0]
-        molar = search('molar:{},', l)[0]
+        pos = l.split('position:')[1].split(',')[0]
+        num = l.split('number:')[1].split(',')[0]
+        small = l.split('small:')[1].split(',')[0]
+        molar = l.split('molar:')[1].split(',')[0]
         list_table.append((name, pos, num, small, molar))
     return list_table
 
@@ -45,9 +43,6 @@ def periodic_table():
 </body>
 </html>'''
     td = ''
-    # td += td_sample('hydrogen', '2', 'H', '12')
-    # td += td_sample('', '', '', '')
-    # td += td_sample('hydrogen', '2', 'H', '12')
     pt = open('periodic_table.txt', 'r')
     list_table = parse_table(pt)
     td = ''
