@@ -49,7 +49,7 @@ class Elem:
             result = "<{tag}{attr}>{content}</{tag}>".format(attr=self.__make_attr(), content=self.__make_content(), tag=self.tag)
         elif self.tag_type == 'simple':
             result = "<{tag}{attr} />".format(tag=self.tag, attr=self.__make_attr())
-        return result
+        return result.replace('&lt;','<').replace('&gt;', '>').replace('&quot;', '"')
 
     def __make_attr(self):
         """
