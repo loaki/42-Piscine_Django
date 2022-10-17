@@ -1,10 +1,12 @@
 import sys
 import antigravity
 
+
 class ValidationError(Exception):
     def __init__(self, msg="Incorrect arg"):
         print(msg)
-    
+
+
 def geohash():
     if len(sys.argv) != 4:
         return print('wrong args : latitude, longitude, datedowjones')
@@ -16,5 +18,6 @@ def geohash():
         return ValidationError(e)
     antigravity.geohash(latitude, longitude, dowjones)
 
-if __name__=='__main__':
+
+if __name__ == '__main__':
     geohash()

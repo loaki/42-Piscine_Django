@@ -15,7 +15,7 @@ class Text(str):
         return super().__str__().replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;').replace('\n', '\n<br />\n')
 
 
-class Elem:
+class Elem():
     """
     Elem will permit us to represent our HTML elements.
     """
