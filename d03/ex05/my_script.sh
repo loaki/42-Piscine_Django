@@ -1,9 +1,9 @@
 #!/bin/env bash
 
 ENV_NAME="django_venv"
-
+PYTHON_PATH='/usr/bin/python3'
 pip3 install virtualenv
-python3 -m virtualenv $ENV_NAME
+$PYTHON_PATH -m virtualenv $ENV_NAME
 activate="`pwd`/$ENV_NAME/bin/activate"
 
 if [ ! -f "$activate" ]
@@ -12,4 +12,6 @@ then
     return 1
 fi
 
-source "$activate"
+source $activate
+
+pip install -r requirement.txt
