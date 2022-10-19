@@ -1,0 +1,5 @@
+https://djangoforbeginners.com/hello-world/
+
+django-admin startproject d04
+python manage.py migrate
+python manage.py startapp ex00
