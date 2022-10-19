@@ -2,7 +2,10 @@ from django.conf import settings
 from django.http import HttpRequest, HttpResponse
 import psycopg2
 
-def ex00View(request: HttpResponse):
+# Create your views here.
+
+
+def ex00View(request):
     try:
         conn = psycopg2.connect(
             dbname=settings.DATABASES['default']['NAME'],
