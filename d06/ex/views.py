@@ -19,7 +19,6 @@ def index(request):
 
 
     if not request.user.is_authenticated:
-        print (request.session.get('anon_user'))
         if request.session.get('anon_user') == None:
             request.session["anon_user"] = choice(settings.ANONYMOUS_NAME)
         if request.session.get("last_change_nick") is None:
