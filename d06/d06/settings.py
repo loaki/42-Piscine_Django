@@ -124,4 +124,15 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ANONYMOUS_NAME = ['Toto', 'Dada','Fizz', 'Buzz', 'Superman', 'Batman', 'Catwoman', 'Lord Voldemort', 'Nikola Tesla', 'Jerry']
+ANONYMOUS_NAME = [
+    'Asgore',
+    'Flowey',
+    'Toriel',
+    'Napstablook',
+    'Mettaton',
+    'Alphys',
+    'Undyne',
+    'Frisk',
+    'Sans',
+    'Papyrus',
+]
