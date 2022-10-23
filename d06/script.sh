@@ -1,8 +1,7 @@
 #!/bin/env bash
 
 PYTHON_PATH="/usr/bin/python3"
-echo $PYTHON_PATH
-VENV_DIR=".venv"
+VENV_DIR="venv"
 pip3 install virtualenv
 
 # setup venv
